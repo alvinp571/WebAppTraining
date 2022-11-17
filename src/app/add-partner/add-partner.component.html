@@ -1,0 +1,33 @@
+<div>
+    <div [hidden]="submitted">
+        <h2>Add Partner Form</h2>
+        <form (ngSubmit)="onSubmit()" #partnerForm="ngForm">
+            <div class="">
+                <label>Name</label>
+                <input type="text" class="" id="name" required [(ngModel)]="modelPartner.name" name="name" #name="ngModel">
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger"> Name cannot be empty
+                </div>
+            </div>
+            <div class="">
+                <label>Phone</label>
+                <input type="text" maxlength="8" (keypress)="validateNo($event)" class="" id="phone" required [(ngModel)]="modelPartner.phone" name="phone" #phone="ngModel">
+                <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger"> Phone can not be empty
+                </div>
+            </div>
+            <div class="">
+                <label>Skill</label>
+                <input type="text" class="" id="skill" required [(ngModel)]="modelPartner.skill" name="skill" #skill="ngModel">
+                <div [hidden]="skill.valid || skill.pristine" class="alert alert-danger"> Skill cannot be empty
+                </div>
+            </div>
+            <div class="">
+                <label>Description</label>
+                <input type="text" class="" id="notes" required [(ngModel)]="modelPartner.notes" name="notes" #notes="ngModel">
+                <div [hidden]="notes.valid || notes.pristine" class="alert alert-danger"> Description cannot be empty
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success" [disabled]="!partnerForm.form.valid">submit</button>
+        </form>
+    </div>
+</div>

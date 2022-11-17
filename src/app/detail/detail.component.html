@@ -1,0 +1,33 @@
+<div>
+    <div [hidden]="submitted">
+        <h2>Contact Form</h2>
+        <form (ngSubmit)="onSubmit()" [formGroup]="partnerFormGroup">
+            <div class="">
+                <label>Name</label>
+                <input type="text" class="" id="name" name="name" formControlName="name">
+                <div [hidden]="partnerFormGroup.get('name')?.valid || partnerFormGroup.get('name')?.pristine" class="alert alert-danger"> Name cannot be empty
+                </div>
+            </div>
+            <div class="">
+                <label>Phone</label>
+                <input type="text" maxlength="8" (keypress)="validateNo($event)" name="phone" formControlName="phone">
+                <div [hidden]="partnerFormGroup.get('phone')?.valid || partnerFormGroup.get('phone')?.pristine" class="alert alert-danger"> Phone can not be empty
+                </div>
+            </div>
+            <div class="">
+                <label>Skill</label>
+                <input type="text" name="skill" formControlName="skill">
+                <div [hidden]="partnerFormGroup.get('skill')?.valid || partnerFormGroup.get('skill')?.pristine" class="alert alert-danger"> Skill cannot be empty
+                </div>
+            </div>
+            <div class="">
+                <label>Description</label>
+                <input type="text" name="notes" formControlName="notes">
+                <div [hidden]="partnerFormGroup.get('notes')?.valid || partnerFormGroup.get('notes')?.pristine" class="alert alert-danger"> Description cannot be empty
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success" [disabled]="!partnerFormGroup.valid">submit</button>
+        </form>
+    </div>
+</div>

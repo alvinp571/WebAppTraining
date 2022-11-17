@@ -1,0 +1,13 @@
+<h2>Business Partner List</h2>
+<button routerLink="/add">Add Business Partner</button>
+<input type="text" placeholder="Search..." (input)="searchPartner($event)">
+<br>
+<br>
+<div class="card" *ngFor="let partner of partners" routerLink="/edit-detail/{{partner.id}}">
+    <div class="card-header-container">
+        <div class="card-title">{{partner.name}}</div>
+        <i class="card-action" (click)="deletePartner(partner.id)">X</i>
+    </div>
+    
+    <app-child [partner]="partner"></app-child>
+</div>

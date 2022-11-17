@@ -1,0 +1,65 @@
+html,
+body {
+  font-family: sans-serif;
+}
+a
+/* Application-wide Styles */
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+p{
+    font-size: 150%;
+    color:goldenrod;
+}
+.card {
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    min-width: 50px;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+  }
+  
+/* .title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color:gold;
+    margin: 0;
+    flex: 0;
+    border-radius: 10px 10px 0 0;
+    background-color: #426236;
+    padding: 1rem;
+} */
+.forms {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-header-container {
+  display: flex;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color:gold;
+  margin: 0;
+  flex: 0;
+  border-radius: 10px 10px 0 0;
+  background-color: #426236;
+  padding: 1rem;
+}
+
+.card-title {
+  flex: 11;
+}
+
+.card-action {
+  /* flex: 1; */
+  color: crimson;
+  cursor: pointer;
+}
